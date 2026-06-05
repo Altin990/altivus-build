@@ -3,25 +3,148 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-cinzel: "Cinzel", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0A0A0A;
+  color: #F0EAD6;
+  font-family: var(--font-cormorant), serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF3750;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Selection */
+::selection {
+  background: rgba(212, 175, 55, 0.25);
+  color: #F0EAD6;
+}
+
+/* Gold divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image: linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Geometric pattern */
+.bg-geo {
+  background-image:
+    linear-gradient(30deg, rgba(212,175,55,0.03) 12%, transparent 12.5%, transparent 87%, rgba(212,175,55,0.03) 87.5%, rgba(212,175,55,0.03)),
+    linear-gradient(150deg, rgba(212,175,55,0.03) 12%, transparent 12.5%, transparent 87%, rgba(212,175,55,0.03) 87.5%, rgba(212,175,55,0.03)),
+    linear-gradient(30deg, rgba(212,175,55,0.03) 12%, transparent 12.5%, transparent 87%, rgba(212,175,55,0.03) 87.5%, rgba(212,175,55,0.03)),
+    linear-gradient(150deg, rgba(212,175,55,0.03) 12%, transparent 12.5%, transparent 87%, rgba(212,175,55,0.03) 87.5%, rgba(212,175,55,0.03));
+  background-size: 80px 140px;
+}
+
+/* Fade-in on scroll utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold glow button */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37, #E8CC6A, #B8962E);
+  color: #0A0A0A;
+  font-family: var(--font-cinzel), serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-gold:hover::after {
+  opacity: 1;
+}
+.btn-gold:hover {
+  box-shadow: 0 0 40px rgba(212,175,55,0.5);
+  transform: translateY(-1px);
+}
+
+/* Gold outline button */
+.btn-outline-gold {
+  border: 1px solid #D4AF37;
+  color: #D4AF37;
+  font-family: var(--font-cinzel), serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+.btn-outline-gold:hover {
+  background: rgba(212,175,55,0.1);
+  box-shadow: 0 0 30px rgba(212,175,55,0.25);
+  transform: translateY(-1px);
+}
+
+/* Card hover */
+.card-hover {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(212,175,55,0.15);
+}
+.card-hover:hover {
+  border-color: rgba(212,175,55,0.5);
+  box-shadow: 0 0 40px rgba(212,175,55,0.12);
+  transform: translateY(-2px);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

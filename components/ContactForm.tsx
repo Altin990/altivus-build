@@ -23,6 +23,7 @@ export default function ContactForm() {
   });
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const validate = (): FieldErrors => {
@@ -47,11 +48,24 @@ export default function ContactForm() {
       return;
     }
     setErrors({});
+    setSubmitError(false);
     setLoading(true);
-    // Simulate async submission (replace with real endpoint)
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xwvjvgkq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const field = (id: keyof typeof form) =>
@@ -70,8 +84,8 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="font-cinzel text-2xl text-parchment mb-3">Message Received</h3>
-        <p className="font-cormorant text-parchment/55 text-lg italic max-w-sm">
-          Thank you, {form.name.split(" ")[0]}. We&apos;ll review your information and reach out within 24 hours.
+        <p className="font-cormorant text-gold text-lg italic max-w-sm">
+          Thank you — we&apos;ll be in touch within 24 hours.
         </p>
       </div>
     );
@@ -233,6 +247,11 @@ export default function ContactForm() {
         )}
       </button>
 
+      {submitError && (
+        <p className="font-cormorant text-red-400 text-sm text-center">
+          Something went wrong. Please try again or email us directly.
+        </p>
+      )}
       <p className="font-cormorant text-parchment/30 text-sm text-center italic">
         No spam. No pressure. We&apos;ll reach out within 24 hours.
       </p>

@@ -17,26 +17,48 @@ const logoNames = [
   "Crest Contracting",
   "Ridge Masters",
   "Skyline Roofing",
+  "Ironclad Roofing",
+  "Blue Sky Exteriors",
+  "Premier Roof Works",
+  "Titan Roofing Co.",
+  "Elite Roofing Group",
+  "Coastal Roof Pros",
+  "American Roofing Co.",
+  "Pinnacle Exteriors",
+  "Patriot Roofing",
+  "Shield Roofing LLC",
 ];
+
+function LogoItem({ name }: { name: string }) {
+  return (
+    <div className="flex items-center gap-2.5 opacity-30 hover:opacity-70 transition-opacity duration-300 cursor-default mx-10 shrink-0">
+      <span className="text-gold text-base" aria-hidden="true">◆</span>
+      <span className="font-cinzel text-sm tracking-[0.12em] text-parchment uppercase whitespace-nowrap">{name}</span>
+    </div>
+  );
+}
 
 function SocialProofBar() {
   return (
-    <section className="border-y border-gold/10 bg-stone-900 py-10">
-      <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
+    <section className="border-y border-gold/10 bg-stone-900 py-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-7 text-center">
         <p className="font-cinzel text-xs tracking-[0.25em] text-parchment/40 uppercase">
           Trusted by roofing companies across the United States
         </p>
       </div>
-      <div className="flex items-center gap-16 flex-wrap justify-center w-full px-6">
-        {logoNames.map((name) => (
-          <div
-            key={name}
-            className="flex items-center gap-2 opacity-25 hover:opacity-60 transition-opacity duration-300 cursor-default"
-          >
-            <span className="text-gold text-lg" aria-hidden="true">◆</span>
-            <span className="font-cinzel text-sm tracking-[0.1em] text-parchment uppercase">{name}</span>
+      {/* Fade edges */}
+      <div className="relative">
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-stone-900 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-stone-900 to-transparent" />
+        {/* Marquee: two identical copies side by side = seamless -50% loop */}
+        <div className="flex animate-marquee">
+          <div className="flex items-center" aria-hidden="false">
+            {logoNames.map((name) => <LogoItem key={name} name={name} />)}
           </div>
-        ))}
+          <div className="flex items-center" aria-hidden="true">
+            {logoNames.map((name) => <LogoItem key={`dup-${name}`} name={name} />)}
+          </div>
+        </div>
       </div>
     </section>
   );

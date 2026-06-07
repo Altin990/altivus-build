@@ -138,6 +138,16 @@ body {
   }
 }
 
+/* Infinite marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
@@ -146,5 +156,8 @@ body {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+  .animate-marquee {
+    animation: none;
   }
 }

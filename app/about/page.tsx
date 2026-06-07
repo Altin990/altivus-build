@@ -23,7 +23,7 @@ const values = [
 ];
 
 const team = [
-  { name: "Adrian Voss", role: "Founder & Strategy Director", bio: "10+ years in performance marketing. Built growth systems for over 50 home services companies across the US." },
+  { name: "Altin Mehmeti", role: "Founder & CEO", bio: "5+ years in performance marketing. Built growth systems for over 50 home services companies across the US." },
   { name: "Natalie Cruz", role: "Head of SEO", bio: "Former Google analyst. Specializes in local search domination for trade service businesses in competitive markets." },
   { name: "Jordan Blake", role: "Paid Media Director", bio: "Managed $4M+ in annual ad spend for roofing and home services clients. ROAS-obsessed." },
 ];

@@ -46,10 +46,10 @@ export default function Footer() {
             <ul className="space-y-3 font-cormorant text-parchment/50 text-base">
               <li>
                 <a
-                  href="mailto:hello@altivus.agency"
+                  href="mailto:altin@altivusagency.com"
                   className="hover:text-gold transition-colors duration-300"
                 >
-                  hello@altivus.agency
+                  altin@altivusagency.com
                 </a>
               </li>
               <li className="text-parchment/30">United States</li>

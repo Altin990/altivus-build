@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroCanvas from "@/components/HeroCanvas";
 
 // ─── Hero ────────────────────────────────────────────────────────────────────
 
@@ -9,6 +10,7 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-obsidian">
       <div className="absolute inset-0 bg-grid opacity-100" />
+      <HeroCanvas />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_60%,rgba(212,175,55,0.06)_0%,transparent_70%)]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
       <div className="absolute top-24 left-10 w-16 h-16 border-t border-l border-gold/20" />

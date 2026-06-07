@@ -33,12 +33,12 @@ function Hero() {
         </h1>
 
         <p className="font-cormorant text-xl sm:text-2xl text-parchment/60 italic mb-10 max-w-2xl mx-auto leading-relaxed">
-          More leads. More booked jobs. Predictable growth.
+          Your competitors have boring websites. We build ones that make homeowners stop and call.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/contact" className="btn-gold px-8 py-4 text-sm rounded-sm cursor-pointer w-full sm:w-auto text-center">
-            Get a Free Audit
+            See What&apos;s Possible
           </Link>
           <Link href="/results" className="btn-outline-gold px-8 py-4 text-sm rounded-sm cursor-pointer w-full sm:w-auto text-center">
             See Our Results
@@ -96,6 +96,11 @@ const problems = [
     title: "Your Website Drives People Away",
     body: "A slow, outdated, or generic website signals to homeowners that you're not the premium choice. First impressions close deals before you ever speak to a prospect.",
   },
+  {
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z" /></svg>,
+    title: "Your Website Looks Like Everyone Else's",
+    body: "Generic, template-looking sites signal amateur. Homeowners choose the company that looks most trustworthy online. That's not you right now.",
+  },
 ];
 
 function ProblemSection() {
@@ -132,7 +137,7 @@ function ProblemSection() {
 const services = [
   {
     title: "Website Design",
-    description: "High-converting, mobile-first roofing websites built to impress homeowners and dominate local search. No templates. Every site is crafted to position you as the premium choice in your market.",
+    description: "Cinematic, scroll-animated websites that position you as the premium roofing company in your market. Homeowners judge you in 3 seconds — we make sure they're impressed.",
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" className="w-7 h-7"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" /></svg>,
   },
   {
@@ -235,7 +240,7 @@ function ResultsSection() {
 // ─── How It Works ─────────────────────────────────────────────────────────────
 
 const steps = [
-  { number: "01", title: "Free Audit", description: "We analyze your current digital presence — website, SEO, ads, local rankings — and identify exactly where you're losing revenue to competitors." },
+  { number: "01", title: "Free Audit", description: "We audit your current site and show you exactly why it's losing you jobs — and what a world-class roofing website looks like. Then we analyze your SEO, ads, and local rankings too." },
   { number: "02", title: "Custom Strategy", description: "We build a tailored 90-day growth roadmap specific to your market, your competitors, and your business goals. No cookie-cutter plans." },
   { number: "03", title: "Execution & Growth", description: "We handle everything. You focus on roofing. Monthly reporting keeps you informed as your leads, rankings, and revenue climb." },
 ];

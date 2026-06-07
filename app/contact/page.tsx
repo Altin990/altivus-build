@@ -11,8 +11,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "hello@altivus.agency",
-    href: "mailto:hello@altivus.agency",
+    value: "altin@altivusagency.com",
+    href: "mailto:altin@altivusagency.com",
   },
   {
     icon: (

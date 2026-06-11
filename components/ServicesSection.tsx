@@ -54,7 +54,7 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((s, i) => (
-            <ScrollReveal key={s.title} delay={i * 150}>
+            <ScrollReveal key={s.title} delay={150 + i * 150} initialScale={0.95}>
               <motion.div
                 className="bg-obsidian rounded-sm p-8 h-full relative overflow-hidden cursor-default border border-gold/15"
                 whileHover={{

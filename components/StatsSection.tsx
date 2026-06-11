@@ -62,7 +62,7 @@ export default function StatsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((s, i) => (
-            <ScrollReveal key={s.label} delay={i * 150}>
+            <ScrollReveal key={s.label} delay={150 + i * 150} initialScale={0.95}>
               <motion.div
                 className="rounded-sm p-10 text-center relative overflow-hidden cursor-default bg-stone-900 border border-gold/15"
                 whileHover={{

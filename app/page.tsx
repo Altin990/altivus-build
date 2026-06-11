@@ -122,7 +122,7 @@ function ProblemSection() {
         </ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {problems.map((p, i) => (
-            <ScrollReveal key={p.title} delay={i * 120}>
+            <ScrollReveal key={p.title} delay={150 + i * 150} initialScale={0.95}>
               <div className="card-hover bg-stone-900 rounded-sm p-8 h-full cursor-default">
                 <div className="text-gold mb-5">{p.icon}</div>
                 <h3 className="font-cinzel text-lg text-parchment mb-4 leading-snug">{p.title}</h3>
@@ -143,7 +143,7 @@ function CTASection() {
     <section className="py-28 bg-stone-900 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <ScrollReveal>
+        <ScrollReveal initialScale={1.1}>
           <div className="border border-gold/25 rounded-sm p-12 md:p-16 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)]" />
             <div className="absolute top-0 left-0 w-10 h-10 border-t border-l border-gold/50" />

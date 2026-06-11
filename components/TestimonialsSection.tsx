@@ -52,6 +52,7 @@ export default function TestimonialsSection() {
           <div className="gold-divider max-w-xs mx-auto mt-6" />
         </ScrollReveal>
 
+        <ScrollReveal initialScale={1.1} delay={150}>
         <div className="relative overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
@@ -99,6 +100,7 @@ export default function TestimonialsSection() {
             ))}
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

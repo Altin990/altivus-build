@@ -32,7 +32,7 @@ const corners = [
 export default function HeroSection() {
   const prefersReduced = useReducedMotion();
   const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 450], [0, 150]);
+  const heroY = useTransform(scrollY, [0, 450], [0, 250]);
   const heroOpacity = useTransform(scrollY, [0, 450], [1, 0]);
 
   return (

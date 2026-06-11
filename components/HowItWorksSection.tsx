@@ -50,7 +50,7 @@ export default function HowItWorksSection() {
           />
 
           {steps.map((step, i) => (
-            <ScrollReveal key={step.number} delay={i * 200}>
+            <ScrollReveal key={step.number} delay={150 + i * 200} initialScale={0.95}>
               <div className="text-center">
                 <motion.div
                   className="inline-flex items-center justify-center w-14 h-14 rounded-sm border border-gold/30 bg-obsidian mb-6 relative z-10 mx-auto"

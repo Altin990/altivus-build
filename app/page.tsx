@@ -41,25 +41,27 @@ function LogoItem({ name }: { name: string }) {
 function SocialProofBar() {
   return (
     <section className="border-y border-gold/10 bg-stone-900 py-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-7 text-center">
-        <p className="font-cinzel text-xs tracking-[0.25em] text-parchment/40 uppercase">
-          Trusted by roofing companies across the United States
-        </p>
-      </div>
-      {/* Fade edges */}
-      <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-stone-900 to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-stone-900 to-transparent" />
-        {/* Marquee: two identical copies side by side = seamless -50% loop */}
-        <div className="flex animate-marquee">
-          <div className="flex items-center" aria-hidden="false">
-            {logoNames.map((name) => <LogoItem key={name} name={name} />)}
-          </div>
-          <div className="flex items-center" aria-hidden="true">
-            {logoNames.map((name) => <LogoItem key={`dup-${name}`} name={name} />)}
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 mb-7 text-center">
+          <p className="font-cinzel text-xs tracking-[0.25em] text-parchment/40 uppercase">
+            Trusted by roofing companies across the United States
+          </p>
+        </div>
+        {/* Fade edges */}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-stone-900 to-transparent" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-stone-900 to-transparent" />
+          {/* Marquee: two identical copies side by side = seamless -50% loop */}
+          <div className="flex animate-marquee">
+            <div className="flex items-center" aria-hidden="false">
+              {logoNames.map((name) => <LogoItem key={name} name={name} />)}
+            </div>
+            <div className="flex items-center" aria-hidden="true">
+              {logoNames.map((name) => <LogoItem key={`dup-${name}`} name={name} />)}
+            </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

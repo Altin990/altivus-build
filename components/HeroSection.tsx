@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import HeroCanvas from "@/components/HeroCanvas";
 
@@ -30,6 +30,11 @@ const corners = [
 ];
 
 export default function HeroSection() {
+  const prefersReduced = useReducedMotion();
+  const { scrollY } = useScroll();
+  const heroY = useTransform(scrollY, [0, 450], [0, 150]);
+  const heroOpacity = useTransform(scrollY, [0, 450], [1, 0]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-obsidian">
       <div className="absolute inset-0 bg-grid opacity-100" />
@@ -47,7 +52,10 @@ export default function HeroSection() {
         />
       ))}
 
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20">
+      <motion.div
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20"
+        style={prefersReduced ? undefined : { y: heroY, opacity: heroOpacity }}
+      >
         <motion.div
           className="inline-flex items-center gap-3 mb-8"
           initial={{ opacity: 0, y: 16 }}
@@ -125,7 +133,7 @@ export default function HeroSection() {
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

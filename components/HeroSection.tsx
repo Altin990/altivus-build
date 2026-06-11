@@ -32,8 +32,9 @@ const corners = [
 export default function HeroSection() {
   const prefersReduced = useReducedMotion();
   const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 450], [0, 250]);
+  const heroY = useTransform(scrollY, [0, 450], [0, 350]);
   const heroOpacity = useTransform(scrollY, [0, 450], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, 450], [1, 0.95]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-obsidian">
@@ -54,7 +55,7 @@ export default function HeroSection() {
 
       <motion.div
         className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20"
-        style={prefersReduced ? undefined : { y: heroY, opacity: heroOpacity }}
+        style={prefersReduced ? undefined : { y: heroY, opacity: heroOpacity, scale: heroScale }}
       >
         <motion.div
           className="inline-flex items-center gap-3 mb-8"

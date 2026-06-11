@@ -46,13 +46,13 @@ export default function TestimonialsSection() {
     <section className="py-28 bg-obsidian relative overflow-hidden">
       <div className="absolute inset-0 bg-geo opacity-60" />
       <div className="relative max-w-4xl mx-auto px-6 lg:px-10">
-        <ScrollReveal className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" clipReveal>
           <span className="font-cinzel text-xs tracking-[0.3em] text-gold uppercase">Client Stories</span>
           <h2 className="font-cinzel text-3xl sm:text-4xl md:text-5xl text-parchment mt-4">What Our Clients Say</h2>
           <div className="gold-divider max-w-xs mx-auto mt-6" />
         </ScrollReveal>
 
-        <ScrollReveal initialScale={1.1} delay={150}>
+        <ScrollReveal initialScale={1.2} delay={150}>
         <div className="relative overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div

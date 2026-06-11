@@ -51,7 +51,7 @@ export default function StatsSection() {
     <section className="py-28 bg-obsidian relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(212,175,55,0.05)_0%,transparent_70%)]" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-        <ScrollReveal className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" clipReveal>
           <span className="font-cinzel text-xs tracking-[0.3em] text-gold uppercase">Proven Results</span>
           <h2 className="font-cinzel text-3xl sm:text-4xl md:text-5xl text-parchment mt-4 leading-tight">
             Numbers That<br />
@@ -62,7 +62,7 @@ export default function StatsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((s, i) => (
-            <ScrollReveal key={s.label} delay={150 + i * 150} initialScale={0.95}>
+            <ScrollReveal key={s.label} delay={150 + i * 200} initialScale={0.9} initialY={80}>
               <motion.div
                 className="rounded-sm p-10 text-center relative overflow-hidden cursor-default bg-stone-900 border border-gold/15"
                 whileHover={{

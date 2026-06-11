@@ -43,7 +43,7 @@ export default function ServicesSection() {
     <section className="py-28 bg-stone-900 relative" id="services">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <ScrollReveal className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" clipReveal>
           <span className="font-cinzel text-xs tracking-[0.3em] text-gold uppercase">What We Do</span>
           <h2 className="font-cinzel text-3xl sm:text-4xl md:text-5xl text-parchment mt-4 leading-tight">
             Services Built for<br />
@@ -54,7 +54,7 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((s, i) => (
-            <ScrollReveal key={s.title} delay={150 + i * 150} initialScale={0.95}>
+            <ScrollReveal key={s.title} delay={150 + i * 200} initialScale={0.9} initialY={80}>
               <motion.div
                 className="bg-obsidian rounded-sm p-8 h-full relative overflow-hidden cursor-default border border-gold/15"
                 whileHover={{

@@ -29,7 +29,7 @@ export default function HowItWorksSection() {
     <section className="py-28 bg-stone-900 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <ScrollReveal className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" clipReveal>
           <span className="font-cinzel text-xs tracking-[0.3em] text-gold uppercase">The Process</span>
           <h2 className="font-cinzel text-3xl sm:text-4xl md:text-5xl text-parchment mt-4">How We Work</h2>
           <div className="gold-divider max-w-xs mx-auto mt-6" />
@@ -50,7 +50,7 @@ export default function HowItWorksSection() {
           />
 
           {steps.map((step, i) => (
-            <ScrollReveal key={step.number} delay={150 + i * 200} initialScale={0.95}>
+            <ScrollReveal key={step.number} delay={150 + i * 200} initialScale={0.9} initialY={80}>
               <div className="text-center">
                 <motion.div
                   className="inline-flex items-center justify-center w-14 h-14 rounded-sm border border-gold/30 bg-obsidian mb-6 relative z-10 mx-auto"

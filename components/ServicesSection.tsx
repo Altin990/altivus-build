@@ -76,15 +76,6 @@ export default function ServicesSection() {
                 </div>
                 <h3 className="font-cinzel text-xl text-parchment mb-4">{s.title}</h3>
                 <p className="font-cormorant text-parchment/55 text-base leading-relaxed">{s.description}</p>
-                <motion.div
-                  className="mt-6 flex items-center gap-2 text-gold text-sm font-cinzel tracking-wider"
-                  initial={{ opacity: 0, x: -6 }}
-                  whileHover={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span>Learn More</span>
-                  <span aria-hidden="true">→</span>
-                </motion.div>
               </motion.div>
             </ScrollReveal>
           ))}
